@@ -49,6 +49,4 @@ public class Team implements Comparable<Team> {
     public int compareTo(Team o) {
        return this.teamName.compareTo(o.getTeamName());
     }
-    
-    
 }
