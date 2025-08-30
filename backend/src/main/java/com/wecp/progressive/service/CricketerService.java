@@ -8,7 +8,7 @@ public interface CricketerService {
 
     List<Cricketer> getAllCricketers();
 
-    Integer addCricketer(Cricketer cricketer);
+    int addCricketer(Cricketer cricketer);
 
     List<Cricketer> getAllCricketersSortedByExperience();
 
