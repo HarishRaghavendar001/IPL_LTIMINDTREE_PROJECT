@@ -22,19 +22,28 @@ export class IplService {
   
   addTeam(team: Team): Observable<Team> {
     const token = localStorage.getItem('token');
-    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    let headers = new HttpHeaders();
+    if (token) {
+      headers = headers.set('Authorization', `Bearer ${token}`);
+    }
     return this.http.post<Team>(`${this.baseUrl}/team`, team, { headers });
   }
 
   updateTeam(team: Team): Observable<Team> {
     const token = localStorage.getItem('token');
-    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    let headers = new HttpHeaders();
+    if (token) {
+      headers = headers.set('Authorization', `Bearer ${token}`);
+    }
     return this.http.put<Team>(`${this.baseUrl}/team/${team.teamId}`, team, { headers });
   }
 
   deleteTeam(teamId: number): Observable<any> {
     const token = localStorage.getItem('token');
-    const headers = token ? { Authorization: `Bearer ${token}` } : {};
+    let headers = new HttpHeaders();
+    if (token) {
+      headers = headers.set('Authorization', `Bearer ${token}`);
+    }
     return this.http.delete(`${this.baseUrl}/team/${teamId}`, { headers });
   }
 
